@@ -16,7 +16,8 @@ func (v *aplication) handleRoutes() *aplication {
 
 	// Users
 	users := Controllers.Users{Default: d}
-	v.Router.HandleFunc("/v1/api/users", users.GetAll)
+
+	v.Router.HandleFunc("/v1/api/users", users.GetAll).Methods("GET")
 
 	return v
 }
